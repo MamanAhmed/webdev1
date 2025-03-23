@@ -1,8 +1,8 @@
 /*
 SPOILER WARNING: Will showcase current bounties in One Piece!
 one piece bounty slideshow
-- changes image every 5 seconds automatically
-- also changes image immediately when user hovers over it
+changes image every 5 seconds automatically
+also changes image immediately when user hovers over it
 */
 
 const images = [
