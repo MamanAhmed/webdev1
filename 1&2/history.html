@@ -2,7 +2,9 @@
 <html lang="en-us">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="application-name" content="Maman Ahmed">
     <meta name="author" content="Maman Ahmed">
     <meta name="description" content="My background, previous experience, education and interests.">
@@ -27,29 +29,49 @@
 
     <main>
         <section>
-            <h2>Education History</h2>
             <article>
-                <h3>University Studies</h3>
-                <p>I’ve studied a variety of subjects at university level:</p>
-                <dl>
-                    <dt>Japanese</dt>
-                    <dd>Stockholm University (2 semesters)</dd>
-                    <dt>Business Economics</dt>
-                    <dd>Stockholm University (1 semester)</dd>
-                    <dt>Civil Engineering</dt>
-                    <dd>KTH Royal Institute of Technology (2 semesters)</dd>
-                    <dt>Computer Science</dt>
-                    <dd>Stockholm University (currently ongoing)</dd>
-                </dl>
-                <p>I’ve completed all the mathematics and statistics components of my degree, which has given me a strong analytical base for programming and data work.</p>
+                <h2>Education History</h2>
+                <table>
+                    <caption>My Education History</caption>
+                    <thead>
+                        <tr>
+                            <th>Program</th>
+                            <th>Institution</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Civil Engineering and Urban Management</td>
+                            <td>Royal Institute of Technology</td>
+                            <td>1 semester</td>
+                        </tr>
+                        <tr>
+                            <td>Japanese 1</td>
+                            <td rowspan="3">Stockholm University</td>
+                            <td>1 semester</td>
+                        </tr>
+                        <tr>
+                            <td>Business Economics</td>
+                            <td>1 semester</td>
+                        </tr>
+                        <tr>
+                            <td>Computer Science</td>
+                            <td>4th semester, ongoing</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Accumulated: 7 semesters (by June)</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </article>
         </section>
 
         <section>
-            <h2>Work Experience</h2>
             <article>
-                <h3>Job History</h3>
-                <p>My work experience includes:</p>
+                <h2>Work Experience</h2>
                 <dl>
                     <dt>Warehouse Logistics</dt>
                     <dd>StoreSupport</dd>
@@ -62,10 +84,57 @@
         </section>
 
         <section>
-            <h2>Boxing Background</h2>
             <article>
-                <h3>Amateur Boxing</h3>
-                <p>I’ve practiced amateur boxing for 13 years, and although I no longer compete, I still train for fun and fitness.</p>
+                <h2>Programming Languages & Skills</h2>
+                <table>
+                    <caption>Programming Proficiency</caption>
+                    <thead>
+                        <tr>
+                            <th>Proficiency Level</th>
+                            <th>Language</th>
+                            <th>Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="1">Advanced</td>
+                            <td>Python</td>
+                            <td>2 years</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Intermediate</td>
+                            <td>R</td>
+                            <td>1 year</td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td>1 year</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Beginner</td>
+                            <td>Java</td>
+                            <td>1 semester</td>
+                        </tr>
+                        <tr>
+                            <td>Scheme</td>
+                            <td>1 semester</td>
+                        </tr>
+                        <tr>
+                            <td>HTML & CSS</td>
+                            <td>½ semester</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2>Boxing Background</h2>
+                <p>
+                    I’ve practiced amateur boxing for 13 years, and although I no longer compete,
+                    I still train for fun and fitness.
+                </p>
             </article>
         </section>
     </main>
