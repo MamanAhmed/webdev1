@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rooftop BBQ – Fullscreen</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body class="fullscreen-video">
-
+  <body class="fullscreen-video">
     <video autoplay muted loop id="bg-video">
-        <source src="media/dhaka_bbq.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+      <source src="media/dhaka_bbq.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
     </video>
 
     <section class="video-overlay">
-        <h1>Rooftop BBQ in Dhaka</h1>
-        <p>Captured during my visit to Bangladesh.</p>
-        <button id="pauseButton">Pause</button>
+      <h1>Rooftop BBQ in Dhaka</h1>
+      <p>Captured during my visit to Bangladesh.</p>
+      <button id="pauseButton">Pause</button>
     </section>
 
     <script>
-        const video = document.getElementById('bg-video');
-        const button = document.getElementById('pauseButton');
+      const video = document.getElementById("bg-video");
+      const button = document.getElementById("pauseButton");
 
-        button.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                button.textContent = 'Pause';
-            } else {
-                video.pause();
-                button.textContent = 'Play';
-            }
-        });
+      button.addEventListener("click", () => {
+        if (video.paused) {
+          video.play();
+          button.textContent = "Pause";
+        } else {
+          video.pause();
+          button.textContent = "Play";
+        }
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
