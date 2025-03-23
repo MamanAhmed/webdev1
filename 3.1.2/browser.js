@@ -1,51 +1,65 @@
-// get user inputs
-const team = prompt("what is your favorite basketball team?");
-const proceed = confirm("do you want to start the live match simulation?");
+/*
+this program simulates a live basketball match
+it asks for your favorite team and if you want to start the match
+if you start, the score updates every second and stops after ten seconds
+a new window opens showing match stats and closes automatically after five seconds
+you can cancel the auto-close by clicking a button
+*/
 
 const output = document.getElementById("output");
+const cancelBtn = document.getElementById("cancel");
 
-// checking user input
-if (proceed) {
-  alert("great! starting match simulation for " + team + "...");
-
-  let homeScore = 0;
-  let awayScore = 0;
-
-  // update the score every second, using math.random()
-  const intervalId = setInterval(() => {
-    homeScore += Math.floor(Math.random() * 3);
-    awayScore += Math.floor(Math.random() * 3);
-    output.innerHTML =
-      "<p><strong>" +
-      team +
-      "</strong>: " +
-      homeScore +
-      " | Rivals: " +
-      awayScore +
-      "</p>";
-  }, 1000);
-
-  // stop the score updates after 10 seconds
-  setTimeout(() => {
-    clearInterval(intervalId);
-    output.innerHTML += "<p>⏱ match simulation ended.</p>";
-  }, 10000);
-
-  // open a new window to show match stats
-  const statsWindow = window.open("", "MatchStats", "width=300,height=200");
-  statsWindow.document.body.innerHTML = "<p>loading match stats...</p>";
-
-  // close the new window after 5 seconds unless canceled
-  const closeTimer = setTimeout(() => {
-    statsWindow.close();
-  }, 5000);
-
-  // let user cancel the auto-close
-  const cancelButton = document.getElementById("cancelButton");
-  cancelButton.addEventListener("click", () => {
-    clearTimeout(closeTimer);
-    output.innerHTML += "<p>auto-close cancelled.</p>";
-  });
-} else {
-  alert("okay, maybe next time!");
+// ask for team and confirm start
+const teamName = prompt("enter your favorite team:");
+if (!teamName) {
+  output.innerHTML = "no team selected. match cancelled.";
+  cancelBtn.style.display = "none";
+  throw new Error("user cancelled team input");
 }
+
+const startMatch = confirm("start the match?");
+if (!startMatch) {
+  output.innerHTML = "match not started.";
+  cancelBtn.style.display = "none";
+  throw new Error("user cancelled match start");
+}
+
+alert("match started!");
+
+// start simulation
+let home = 0;
+let away = 0;
+const rivals = "Rivals";
+
+// open popup
+const statWindow = window.open("", "", "width=400,height=300");
+statWindow.document.write("<p>loading match stats...</p>");
+
+// update score every second
+const interval = setInterval(() => {
+  home += Math.floor(Math.random() * 3);
+  away += Math.floor(Math.random() * 3);
+  output.innerHTML = `<strong>${teamName}</strong>: ${home} | ${rivals}: ${away}`;
+}, 1000);
+
+// stop after 10s and update popup
+const timeout = setTimeout(() => {
+  clearInterval(interval);
+  output.innerHTML += "<p>match simulation ended.</p>";
+  statWindow.document.body.innerHTML = `
+    <h2>Final Match Stats</h2>
+    <p>${teamName}: ${home}</p>
+    <p>${rivals}: ${away}</p>
+  `;
+}, 10000);
+
+// auto-close popup after 5s
+const closeTimer = setTimeout(() => {
+  statWindow.close();
+}, 5000);
+
+// cancel auto-close if clicked
+cancelBtn.addEventListener("click", () => {
+  clearTimeout(closeTimer);
+  output.innerHTML += "<p>auto-close cancelled.</p>";
+});

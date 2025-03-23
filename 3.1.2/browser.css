@@ -1,46 +1,29 @@
 body {
-  font-family: monospace;
   background-color: #121212;
   color: #e0e0e0;
+  font-family: monospace;
   padding: 20px;
-  line-height: 1.6;
-  margin: 0;
 }
 
 h1 {
   color: #bb86fc;
-  margin-bottom: 1rem;
 }
 
 #output {
-  padding: 10px 20px;
   background-color: #1e1e1e;
-  border-radius: 6px;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
   border: 1px solid #333;
-  max-width: 800px;
-  margin: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-#output p {
-  margin: 8px 0;
-}
-
-strong {
-  color: #ffffff;
 }
 
 button {
-  display: block;
-  margin: 20px auto;
   background-color: #03dac6;
   color: #121212;
-  padding: 10px 18px;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
