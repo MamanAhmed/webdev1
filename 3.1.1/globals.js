@@ -53,3 +53,6 @@ const isValid = jerseyPattern.test(userInput);
 output.innerHTML += `<p><strong>Jersey Format Valid:</strong> ${
   isValid ? "Yes" : "No"
 }</p>`;
+
+// use of globalThis object
+output.innerHTML += `<p><strong>globalThis Object:</strong> ${globalThis.constructor.name}</p>`;
